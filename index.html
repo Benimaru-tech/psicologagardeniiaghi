@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gardênia Iaghi — Psicóloga. Atuação em Psicologia Infantojuvenil, Psicologia Organizacional e palestras.">
+  <meta name="theme-color" content="#315b43">
+  <title>Gardênia Iaghi | Psicóloga</title>
+
+  <!-- Fontes: você pode trocar as famílias aqui -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       1. IDENTIDADE VISUAL — altere as cores neste bloco
+       ========================================================= */
+    :root {
+      --green: #315b43;
+      --green-dark: #244632;
+      --green-soft: #e8f0e7;
+      --pink: #e8aeb8;
+      --pink-soft: #f8e8e9;
+      --blue: #a9cbd6;
+      --blue-soft: #e8f1f4;
+      --yellow: #f1d58b;
+      --cream: #fbf8f1;
+      --white: #ffffff;
+      --ink: #26352c;
+      --muted: #68736b;
+      --line: #e8e7df;
+      --shadow: 0 18px 50px rgba(38, 53, 44, .09);
+      --radius: 24px;
+      --serif: "Playfair Display", Georgia, serif;
+      --sans: "DM Sans", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: var(--sans);
+      line-height: 1.65;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
+    .container { width: min(1160px, calc(100% - 44px)); margin-inline: auto; }
+    .eyebrow {
+      color: var(--green);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.13; margin: 0; }
+    h1, h2 { font-family: var(--serif); font-weight: 600; }
+    h1 { font-size: clamp(2.65rem, 6vw, 5.2rem); letter-spacing: -.04em; }
+    h2 { font-size: clamp(2.1rem, 4vw, 3.35rem); letter-spacing: -.035em; }
+    h3 { font-size: 1.22rem; }
+    p { margin: 0; }
+    .section { padding: 100px 0; }
+    .section-heading { max-width: 690px; margin-bottom: 42px; }
+    .section-heading h2 { margin: 12px 0 16px; }
+    .section-heading p { color: var(--muted); max-width: 610px; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 50px; padding: 0 23px; border-radius: 999px;
+      border: 1px solid transparent; font-weight: 700; transition: .2s ease;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--green); color: white; }
+    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .btn-outline { border-color: rgba(49,91,67,.28); color: var(--green); }
+    .btn-outline:hover { background: var(--green-soft); }
+    .text-link { color: var(--green); font-weight: 700; display: inline-flex; gap: 8px; align-items: center; }
+    .text-link:hover { gap: 13px; }
+
+    /* =========================================================
+       2. IMAGENS — substitua os caminhos dos backgrounds abaixo
+       Ex.: url("assets/foto-gardenia.jpg")
+       ========================================================= */
+    .photo {
+      background-color: #e7e9df;
+      background-image: linear-gradient(135deg, rgba(49,91,67,.08), rgba(232,174,184,.20));
+      background-position: center;
+      background-size: cover;
+      position: relative;
+      overflow: hidden;
+    }
+    .photo::after {
+      content: "ADICIONE SUA FOTO AQUI";
+      position: absolute; inset: auto 12px 12px;
+      text-align: center; color: rgba(49,91,67,.65);
+      font-size: .68rem; font-weight: 700; letter-spacing: .12em;
+    }
+    /* Troque as linhas abaixo por:
+       background-image: url("assets/foto-perfil.jpg");
+       e remova o ::after correspondente se desejar. */
+    .hero-photo { background-image: linear-gradient(145deg, rgba(49,91,67,.05), rgba(232,174,184,.22)); }
+    .child-photo { background-image: linear-gradient(145deg, rgba(241,213,139,.22), rgba(232,174,184,.25)); }
+    .work-photo { background-image: linear-gradient(145deg, rgba(169,203,214,.3), rgba(49,91,67,.12)); }
+    .talk-photo { background-image: linear-gradient(145deg, rgba(241,213,139,.24), rgba(169,203,214,.25)); }
+
+    /* =========================================================
+       3. CABEÇALHO E NAVEGAÇÃO
+       ========================================================= */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(251,248,241,.92); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(49,91,67,.08);
+    }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; min-width: 220px; }
+    .brand-mark {
+      width: 43px; height: 43px; border-radius: 50%;
+      display: grid; place-items: center; color: var(--green);
+      background: conic-gradient(from 25deg, var(--pink), var(--yellow), var(--blue), #a9c48e, var(--pink));
+      font-family: var(--serif); font-size: 1.15rem; font-weight: 700;
+    }
+    .brand-name { color: var(--green); font-family: var(--serif); font-size: 1.05rem; font-weight: 700; letter-spacing: .04em; line-height: 1.1; }
+    .brand-sub { color: var(--muted); font-size: .62rem; letter-spacing: .18em; }
+    .nav-links { display: flex; align-items: center; gap: 27px; font-size: .9rem; font-weight: 600; color: #526057; }
+    .nav-links a:hover { color: var(--green); }
+    .nav-cta { padding: 12px 18px; font-size: .86rem; }
+    .menu-toggle { display: none; border: 0; background: transparent; color: var(--green); font-size: 1.7rem; cursor: pointer; }
+
+    /* =========================================================
+       4. HERO
+       ========================================================= */
+    .hero { padding: 70px 0 88px; overflow: hidden; position: relative; }
+    .hero::before {
+      content: ""; position: absolute; width: 390px; height: 390px; border-radius: 50%;
+      background: var(--pink-soft); right: -170px; top: -130px; z-index: -1;
+    }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 70px; align-items: center; }
+    .hero-copy { padding: 20px 0; }
+    .hero-copy h1 { color: var(--green); margin: 18px 0 22px; }
+    .hero-copy h1 span { color: #bd7888; }
+    .hero-copy > p { color: var(--muted); font-size: 1.08rem; max-width: 570px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 30px; color: var(--muted); font-size: .88rem; }
+    .mini-dots { display: flex; gap: 5px; }
+    .mini-dots i { width: 9px; height: 9px; border-radius: 50%; display: block; }
+    .mini-dots i:nth-child(1) { background: var(--pink); }
+    .mini-dots i:nth-child(2) { background: var(--yellow); }
+    .mini-dots i:nth-child(3) { background: var(--blue); }
+    .hero-art { position: relative; min-height: 510px; }
+    .hero-photo { position: absolute; inset: 15px 35px 20px 55px; border-radius: 48% 48% 28px 28px; box-shadow: var(--shadow); }
+    .hero-sticker {
+      position: absolute; width: 145px; height: 145px; right: 0; bottom: 20px;
+      display: grid; place-items: center; text-align: center; padding: 20px;
+      background: var(--yellow); color: var(--green); border-radius: 50%;
+      font-family: var(--serif); font-weight: 600; transform: rotate(8deg);
+      box-shadow: 0 12px 30px rgba(90,80,40,.12);
+    }
+    .hero-flower { position: absolute; left: 5px; top: 25px; color: #bd7888; font-size: 4.2rem; transform: rotate(-18deg); }
+    .hero-caption {
+      position: absolute; left: 0; bottom: 0; background: white; border-radius: 18px;
+      padding: 15px 20px; box-shadow: var(--shadow); color: var(--green); font-size: .83rem;
+    }
+
+    /* =========================================================
+       5. FAIXA DE ATUAÇÃO
+       ========================================================= */
+    .focus-strip { background: var(--green); color: white; padding: 22px 0; }
+    .focus-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; }
+    .focus-inner span { display: inline-flex; align-items: center; gap: 10px; font-size: .9rem; font-weight: 600; }
+    .focus-inner b { color: var(--yellow); font-size: 1.2rem; }
+
+    /* =========================================================
+       6. SOBRE
+       ========================================================= */
+    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 75px; align-items: center; }
+    .about-visual { min-height: 460px; position: relative; }
+    .about-photo { position: absolute; inset: 0 35px 25px 0; border-radius: 28px 110px 28px 28px; }
+    .about-blob { position: absolute; width: 155px; height: 155px; right: 0; bottom: 0; border-radius: 50%; background: var(--blue); z-index: -1; }
+    .about-copy h2 { color: var(--green); margin: 12px 0 20px; }
+    .about-copy p { color: var(--muted); margin-bottom: 15px; }
+    .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0 28px; }
+    .credential { background: white; border: 1px solid var(--line); padding: 15px; border-radius: 16px; }
+    .credential strong { display: block; color: var(--green); font-size: .92rem; }
+    .credential small { color: var(--muted); }
+
+    /* =========================================================
+       7. ÁREAS DE ATUAÇÃO
+       ========================================================= */
+    .areas { background: #f1f4ed; }
+    .areas-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .area-card { border-radius: var(--radius); overflow: hidden; background: white; box-shadow: 0 8px 28px rgba(38,53,44,.05); }
+    .area-image { height: 245px; }
+    .area-content { padding: 30px; }
+    .area-tag { display: inline-block; padding: 7px 12px; border-radius: 999px; font-size: .72rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .tag-pink { background: var(--pink-soft); color: #925563; }
+    .tag-blue { background: var(--blue-soft); color: #456b7a; }
+    .area-content h3 { color: var(--green); font-family: var(--serif); font-size: 1.65rem; margin: 16px 0 12px; }
+    .area-content p { color: var(--muted); }
+    .area-list { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 9px; color: #526057; font-size: .92rem; }
+    .area-list li::before { content: "✳"; color: #bd7888; margin-right: 10px; }
+
+    /* =========================================================
+       8. PALESTRAS
+       ========================================================= */
+    .talks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .talk-photo { min-height: 420px; border-radius: 28px; }
+    .talk-copy h2 { color: var(--green); margin: 12px 0 18px; }
+    .talk-copy p { color: var(--muted); margin-bottom: 22px; }
+    .topic-chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 22px 0 28px; }
+    .topic-chips span { background: var(--cream); border: 1px solid var(--line); padding: 9px 13px; border-radius: 999px; font-size: .82rem; color: #526057; }
+
+    /* =========================================================
+       9. FORMAÇÃO E EXPERIÊNCIA
+       ========================================================= */
+    .journey { background: var(--pink-soft); }
+    .journey-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 45px; }
+    .journey h3 { color: var(--green); font-family: var(--serif); font-size: 1.55rem; margin-bottom: 22px; }
+    .timeline { border-left: 2px solid #d8a0aa; padding-left: 22px; display: grid; gap: 22px; }
+    .timeline-item { position: relative; }
+    .timeline-item::before { content: ""; position: absolute; width: 10px; height: 10px; border-radius: 50%; background: var(--green); left: -28px; top: 7px; }
+    .timeline-item strong { color: var(--green); display: block; }
+    .timeline-item p { color: #68736b; font-size: .91rem; margin-top: 3px; }
+
+    /* =========================================================
+       10. CONTATO
+       ========================================================= */
+    .contact { padding: 90px 0; }
+    .contact-card {
+      background: var(--green); color: white; border-radius: 30px; padding: 58px;
+      display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center;
+      position: relative; overflow: hidden;
+    }
+    .contact-card::after { content: "✿"; position: absolute; right: 210px; top: -65px; font-size: 14rem; color: rgba(255,255,255,.07); }
+    .contact-card h2 { max-width: 650px; margin: 10px 0 14px; }
+    .contact-card p { color: rgba(255,255,255,.78); max-width: 590px; }
+    .contact-card .eyebrow { color: var(--yellow); }
+    .contact-card .btn { background: var(--yellow); color: var(--green-dark); white-space: nowrap; z-index: 1; }
+    .contact-card .btn:hover { transform: translateY(-2px); background: #f7df9f; }
+
+    /* =========================================================
+       11. RODAPÉ
+       ========================================================= */
+    footer { background: #203d2d; color: rgba(255,255,255,.78); padding: 35px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+    footer .brand-name { color: white; }
+    footer .brand-sub { color: rgba(255,255,255,.65); }
+    .footer-note { font-size: .8rem; text-align: right; }
+
+    /* Botão flutuante */
+    .whatsapp-float {
+      position: fixed; right: 22px; bottom: 22px; z-index: 40;
+      width: 58px; height: 58px; border-radius: 50%; display: grid; place-items: center;
+      background: #238b58; color: white; font-size: 1.55rem; box-shadow: 0 8px 25px rgba(0,0,0,.18);
+      transition: .2s;
+    }
+    .whatsapp-float:hover { transform: translateY(-4px); }
+
+    /* =========================================================
+       12. RESPONSIVIDADE
+       ========================================================= */
+    @media (max-width: 900px) {
+      .nav-links { gap: 15px; font-size: .82rem; }
+      .nav-cta { display: none; }
+      .hero-grid { gap: 25px; }
+      .hero-art { min-height: 430px; }
+      .about-grid { gap: 40px; }
+      .talks-grid { gap: 35px; }
+      .contact-card { padding: 42px; }
+    }
+    @media (max-width: 700px) {
+      .container { width: min(100% - 32px, 560px); }
+      .section { padding: 72px 0; }
+      .nav { min-height: 72px; }
+      .menu-toggle { display: block; }
+      .nav-links {
+        display: none; position: absolute; top: 71px; left: 0; right: 0;
+        padding: 22px; background: var(--cream); border-bottom: 1px solid var(--line);
+        flex-direction: column; align-items: stretch; gap: 17px;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 4px 0; }
+      .hero { padding: 45px 0 65px; }
+      .hero-grid, .about-grid, .areas-grid, .talks-grid, .journey-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 28px; }
+      .hero-copy { padding: 0; }
+      .hero-copy > p { font-size: 1rem; }
+      .hero-art { min-height: 390px; max-width: 500px; width: 100%; margin: auto; }
+      .hero-photo { inset: 10px 28px 18px 35px; }
+      .hero-sticker { width: 112px; height: 112px; font-size: .83rem; padding: 12px; }
+      .hero-flower { font-size: 3rem; }
+      .focus-inner { justify-content: flex-start; gap: 14px 25px; }
+      .focus-inner span { font-size: .82rem; }
+      .about-visual { min-height: 360px; order: 2; }
+      .about-copy { order: 1; }
+      .area-image { height: 205px; }
+      .area-content { padding: 24px; }
+      .talk-photo { min-height: 300px; order: 2; }
+      .talk-copy { order: 1; }
+      .contact-card { grid-template-columns: 1fr; padding: 34px 25px; }
+      .contact-card::after { right: -10px; top: -50px; }
+      .contact-card .btn { justify-self: start; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-note { text-align: left; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <!-- CABEÇALHO -->
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Gardênia Iaghi — início">
+        <!-- Se tiver o logo original, substitua este símbolo por:
+             <img src="assets/logo-gardenia.png" alt="Gardênia Iaghi" style="width:48px"> -->
+        <span class="brand-mark">G</span>
+        <span>
+          <span class="brand-name">GARDÊNIA IAGHI</span><br>
+          <span class="brand-sub">PSICÓLOGA</span>
+        </span>
+      </a>
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">☰</button>
+      <nav class="nav-links" id="navLinks">
+        <a href="#sobre">Sobre mim</a>
+        <a href="#atuacao">Atuação</a>
+        <a href="#palestras">Palestras</a>
+        <a href="#formacao">Formação</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn-primary nav-cta" href="https://wa.me/5579999467873" target="_blank" rel="noopener">Fale comigo ↗</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / APRESENTAÇÃO -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Psicologia • Acolhimento • Desenvolvimento</span>
+          <h1>Cuidar de pessoas é cultivar <span>possibilidades.</span></h1>
+          <p>Um trabalho pautado na escuta, no acolhimento e no respeito à singularidade de cada pessoa — da infância ao ambiente de trabalho.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#atuacao">Conheça minha atuação <span>→</span></a>
+            <a class="btn btn-outline" href="#sobre">Sobre Gardênia</a>
+          </div>
+          <div class="hero-note">
+            <span class="mini-dots"><i></i><i></i><i></i></span>
+            <span>Psicóloga • CRP-03/21905</span>
+          </div>
+        </div>
+        <div class="hero-art" aria-label="Espaço reservado para foto de Gardênia">
+          <div class="photo hero-photo"></div>
+          <div class="hero-flower" aria-hidden="true">✿</div>
+          <div class="hero-sticker">Escuta que acolhe.<br> Cuidado que floresce.</div>
+          <div class="hero-caption">Gardênia Iaghi · Psicóloga</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAIXA DE ESPECIALIDADES -->
+    <div class="focus-strip">
+      <div class="container focus-inner">
+        <span><b>✳</b> Psicologia Infantojuvenil</span>
+        <span><b>✳</b> Psicologia Organizacional</span>
+        <span><b>✳</b> Palestras e ações educativas</span>
+      </div>
+    </div>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+      <div class="container about-grid">
+        <div class="about-visual">
+          <div class="photo about-photo"></div>
+          <div class="about-blob"></div>
+        </div>
+        <div class="about-copy">
+          <span class="eyebrow">Prazer, sou Gardênia</span>
+          <h2>Psicologia feita de presença, escuta e respeito.</h2>
+          <p>Sou psicóloga, formada pela Universidade Tiradentes, com trajetória profissional em diferentes contextos de cuidado e promoção da saúde mental.</p>
+          <p>Minha experiência inclui a atuação com crianças, famílias e comunidades, além de projetos voltados à saúde mental no ambiente organizacional. Acredito na importância de compreender cada pessoa em sua história, relações e contexto.</p>
+          <p>Meu compromisso é oferecer uma atuação ética, humanizada e atenta às necessidades de cada público.</p>
+          <div class="credentials">
+            <div class="credential"><strong>Psicologia</strong><small>Universidade Tiradentes · 2019</small></div>
+            <div class="credential"><strong>Psicologia Infantil</strong><small>Pós-graduação · 2021</small></div>
+            <div class="credential"><strong>Terapeuta ABA</strong><small>Formações complementares</small></div>
+            <div class="credential"><strong>Psicologia Organizacional</strong><small>Pós-graduação em andamento*</small></div>
+          </div>
+          <a class="text-link" href="#formacao">Conheça minha trajetória <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÁREAS DE ATUAÇÃO -->
+    <section class="section areas" id="atuacao">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Áreas de atuação</span>
+          <h2>Diferentes contextos. O mesmo compromisso com o cuidado.</h2>
+          <p>Uma atuação que considera as necessidades de cada fase da vida e os ambientes em que as pessoas se desenvolvem e se relacionam.</p>
+        </div>
+        <div class="areas-grid">
+          <article class="area-card">
+            <div class="photo area-image child-photo" role="img" aria-label="Espaço reservado para imagem da atuação infantojuvenil"></div>
+            <div class="area-content">
+              <span class="area-tag tag-pink">Infância e adolescência</span>
+              <h3>Psicologia Infantojuvenil</h3>
+              <p>Atenção ao desenvolvimento e às necessidades de crianças e adolescentes, considerando também a participação da família e os diferentes contextos de convivência.</p>
+              <ul class="area-list">
+                <li>Acompanhamento de crianças atípicas</li>
+                <li>Formação complementar em ABA</li>
+                <li>Desenvolvimento e aprendizagem</li>
+                <li>Acolhimento e orientação familiar</li>
+              </ul>
+              <a class="text-link" href="#contato">Saiba mais <span>→</span></a>
+            </div>
+          </article>
+          <article class="area-card">
+            <div class="photo area-image work-photo" role="img" aria-label="Espaço reservado para imagem da atuação organizacional"></div>
+            <div class="area-content">
+              <span class="area-tag tag-blue">Empresas e instituições</span>
+              <h3>Psicologia Organizacional</h3>
+              <p>Promoção da saúde mental e de relações mais saudáveis no trabalho, com ações que valorizam as pessoas e o desenvolvimento das equipes.</p>
+              <ul class="area-list">
+                <li>Ações de saúde mental e bem-estar</li>
+                <li>Atividades e dinâmicas em grupo</li>
+                <li>Palestras e ações socioeducativas</li>
+                <li>Prevenção e mediação de conflitos</li>
+              </ul>
+              <a class="text-link" href="#contato">Leve essa proposta à sua empresa <span>→</span></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PALESTRAS -->
+    <section class="section" id="palestras">
+      <div class="container talks-grid">
+        <div class="talk-copy">
+          <span class="eyebrow">Palestras e ações educativas</span>
+          <h2>Conversas que informam, sensibilizam e aproximam.</h2>
+          <p>Experiência na realização de palestras e atividades para empresas, escolas e instituições, abordando temas importantes para a saúde mental, o desenvolvimento humano e as relações.</p>
+          <div class="topic-chips">
+            <span>Saúde mental no trabalho</span>
+            <span>Ansiedade e emoções</span>
+            <span>Setembro Amarelo</span>
+            <span>Autoestima</span>
+            <span>Empoderamento feminino</span>
+            <span>Educação humanizada</span>
+          </div>
+          <a class="btn btn-primary" href="https://wa.me/5579999467873?text=Ol%C3%A1%2C%20Gard%C3%AAnia!%20Gostaria%20de%20conversar%20sobre%20palestras%20e%20a%C3%A7%C3%B5es%20educativas." target="_blank" rel="noopener">Solicitar informações</a>
+        </div>
+        <div class="photo talk-photo" role="img" aria-label="Espaço reservado para foto de palestra ou evento"></div>
+      </div>
+    </section>
+
+    <!-- FORMAÇÃO E EXPERIÊNCIA -->
+    <section class="section journey" id="formacao">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Formação e trajetória</span>
+          <h2>Conhecimento construído ao longo do caminho.</h2>
+          <p>Formação acadêmica e experiências em diferentes espaços de atuação profissional.</p>
+        </div>
+        <div class="journey-grid">
+          <div>
+            <h3>Formação acadêmica</h3>
+            <div class="timeline">
+              <div class="timeline-item"><strong>Bacharelado em Psicologia</strong><p>Universidade Tiradentes · 2019</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Infantil</strong><p>Grupo Educacional FAVENI · 2021</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional</strong><p>Em andamento · Faculdade FACEMINAS</p></div>
+              <div class="timeline-item"><strong>Formação complementar em ABA</strong><p>Formações de terapeuta ABA · 2023 e 2024</p></div>
+            </div>
+          </div>
+          <div>
+            <h3>Experiência profissional</h3>
+            <div class="timeline">
+              <div class="timeline-item"><strong>Prefeitura Municipal de Umburanas — BA</strong><p>Psicóloga · Apoio a crianças atípicas na AACADU · atuação atual informada</p></div>
+              <div class="timeline-item"><strong>CRAS Quilombola de Lage dos Negros</strong><p>Psicóloga Social · Campo Formoso — BA · 2025–2026</p></div>
+              <div class="timeline-item"><strong>Vestas do Brasil Energia Eólica</strong><p>Psicóloga Organizacional · 2025</p></div>
+              <div class="timeline-item"><strong>Clínica Corpol</strong><p>Psicóloga · 2022–2023</p></div>
+              <div class="timeline-item"><strong>CRAS — Umburanas</strong><p>Psicóloga · 2020–2023</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section class="contact" id="contato">
+      <div class="container">
+        <div class="contact-card">
+          <div>
+            <span class="eyebrow">Vamos conversar?</span>
+            <h2>Será um prazer apresentar meu trabalho a você.</h2>
+            <p>Entre em contato para saber mais sobre a atuação profissional, palestras e possibilidades de atendimento.</p>
+          </div>
+          <a class="btn" href="https://wa.me/5579999467873" target="_blank" rel="noopener">Conversar pelo WhatsApp ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark">G</span>
+        <span><span class="brand-name">GARDÊNIA IAGHI</span><br><span class="brand-sub">PSICÓLOGA · CRP-03/21905</span></span>
+      </a>
+      <div class="footer-note">
+        <div>© <span id="year"></span> Gardênia Iaghi. Todos os direitos reservados.</div>
+        <div>Este site tem finalidade informativa.</div>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/5579999467873" target="_blank" rel="noopener" aria-label="Fale pelo WhatsApp">✆</a>
+
+  <script>
+    // Menu mobile
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "×" : "☰";
+    });
+
+    // Fecha o menu ao selecionar uma seção
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Ano automático no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
