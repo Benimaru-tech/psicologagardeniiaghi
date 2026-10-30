@@ -263,6 +263,64 @@
     .contact-card .btn { background: var(--yellow); color: var(--green-dark); white-space: nowrap; z-index: 1; }
     .contact-card .btn:hover { transform: translateY(-2px); background: #f7df9f; }
 
+    /* REDES SOCIAIS */
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+  position: relative;
+  z-index: 2;
+}
+
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 17px;
+  border: 1px solid rgba(49,91,67,.2);
+  border-radius: 999px;
+  color: var(--green);
+  background: white;
+  font-size: .9rem;
+  font-weight: 700;
+  transition: .2s ease;
+}
+
+.social-links a:hover {
+  background: var(--pink-soft);
+  transform: translateY(-2px);
+}
+
+.social-links .social-icon {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.contact-card .social-links a {
+  color: white;
+  background: transparent;
+  border-color: rgba(255,255,255,.4);
+}
+
+.contact-card .social-links a:hover {
+  background: rgba(255,255,255,.13);
+}
+
+footer .social-links {
+  margin-top: 0;
+}
+
+footer .social-links a {
+  color: white;
+  background: transparent;
+  border-color: rgba(255,255,255,.35);
+}
+
+footer .social-links a:hover {
+  background: rgba(255,255,255,.12);
+}
+    
     /* =========================================================
        11. RODAPÉ
        ========================================================= */
@@ -523,6 +581,19 @@
             <span class="eyebrow">Vamos conversar?</span>
             <h2>Será um prazer apresentar meu trabalho a você.</h2>
             <p>Entre em contato para saber mais sobre a atuação profissional, palestras e possibilidades de atendimento.</p>
+            <div class="social-links" aria-label="Redes sociais">
+  <a href="https://www.instagram.com/psi.gardeniaiaghi/"
+     target="_blank" rel="noopener noreferrer">
+    <span class="social-icon">◎</span>
+    Instagram
+  </a>
+
+  <a href="https://www.linkedin.com/in/gard%C3%AAnia-iaghi-aa2308153/"
+     target="_blank" rel="noopener noreferrer">
+    <span class="social-icon">in</span>
+    LinkedIn
+  </a>
+</div>
           </div>
           <a class="btn" href="https://wa.me/5579999467873" target="_blank" rel="noopener">Conversar pelo WhatsApp ↗</a>
         </div>
@@ -536,6 +607,18 @@
         <span class="brand-mark">G</span>
         <span><span class="brand-name">GARDÊNIA IAGHI</span><br><span class="brand-sub">PSICÓLOGA · CRP-03/21905</span></span>
       </a>
+      <div class="social-links" aria-label="Redes sociais no rodapé">
+  <a href="https://www.instagram.com/psi.gardeniaiaghi/"
+     target="_blank" rel="noopener noreferrer">
+    Instagram ↗
+  </a>
+
+  <a href="https://www.linkedin.com/in/gard%C3%AAnia-iaghi-aa2308153/"
+     target="_blank" rel="noopener noreferrer">
+    LinkedIn ↗
+  </a>
+</div>
+      
       <div class="footer-note">
         <div>© <span id="year"></span> Gardênia Iaghi. Todos os direitos reservados.</div>
         <div>Este site tem finalidade informativa.</div>
