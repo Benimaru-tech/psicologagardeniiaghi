@@ -96,9 +96,14 @@
 
     /* Sobre */
     .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 75px; align-items: center; }
-    .about-visual { min-height: 460px; position: relative; }
-    .about-photo { position: absolute; inset: 0 35px 25px 0; border-radius: 28px 110px 28px 28px; }
-    .about-blob { position: absolute; width: 155px; height: 155px; right: 0; bottom: 0; border-radius: 50%; background: var(--blue); z-index: -1; }
+    .about-visual { display: grid; grid-template-columns: 1fr; gap: 22px; align-content: start; }
+    .about-photo, .about-photo-secondary {
+      display: block; width: 100%; aspect-ratio: 4 / 5; max-height: 430px;
+      object-fit: cover; object-position: center; border-radius: 26px;
+      box-shadow: var(--shadow); background: #e7e9df;
+    }
+    .about-photo-secondary { object-position: center 35%; }
+    .about-blob { display: none; }
     .about-copy h2 { color: var(--green); margin: 12px 0 20px; }
     .about-copy p { color: var(--muted); margin-bottom: 15px; }
     .credentials { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 25px 0 28px; }
@@ -210,7 +215,7 @@
       .hero-flower { font-size: 3rem; }
       .focus-inner { justify-content: flex-start; gap: 14px 25px; }
       .focus-inner span { font-size: .82rem; }
-      .about-visual { min-height: 360px; order: 2; }
+      .about-visual { min-height: 0; order: 2; }
       .about-copy { order: 1; }
       .area-image { height: 205px; }
       .area-content { padding: 24px; }
@@ -272,7 +277,10 @@
 
     <section class="section" id="sobre">
       <div class="container about-grid">
-        <div class="about-visual"><div class="photo about-photo"></div><div class="about-blob"></div></div>
+        <div class="about-visual">
+          <img class="about-photo" src="gardenia-retrato-2.jpg" alt="Gardênia Iaghi sorrindo no consultório" loading="lazy">
+          <img class="about-photo-secondary" src="psisobre.jpg" alt="Gardênia Iaghi em seu ambiente de trabalho" loading="lazy">
+        </div>
         <div class="about-copy">
           <span class="eyebrow">Prazer, sou Gardênia Iaghi</span>
           <h2>Uma psicologia que acolhe histórias, compreende contextos e transforma realidades.</h2>
