@@ -125,18 +125,6 @@
     .area-list { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 9px; color: #526057; font-size: .92rem; }
     .area-list li::before { content: "✳"; color: #bd7888; margin-right: 10px; }
 
-
-    /* Galeria do espaço de atendimento */
-    .office-gallery { background: #f1f4ed; }
-    .office-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
-    .office-card { overflow: hidden; border-radius: var(--radius); background: white; box-shadow: 0 8px 28px rgba(38,53,44,.06); }
-    .office-card img { width: 100%; height: 360px; object-fit: cover; }
-    .office-card p { padding: 17px 20px; color: var(--muted); font-size: .92rem; }
-    @media (max-width: 700px) {
-      .office-grid { grid-template-columns: 1fr; }
-      .office-card img { height: 300px; }
-    }
-
     /* Palestras */
     .talks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .talk-photo { min-height: 420px; border-radius: 28px; }
@@ -242,7 +230,7 @@
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">☰</button>
       <nav class="nav-links" id="navLinks">
-        <a href="#sobre">Sobre mim</a><a href="#atuacao">Atuação</a><a href="#espaco">Consultório</a><a href="#palestras">Palestras</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
+        <a href="#sobre">Sobre mim</a><a href="#atuacao">Atuação</a><a href="#palestras">Palestras</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="https://wa.me/5579999467873" target="_blank" rel="noopener">Fale comigo ↗</a>
     </div>
@@ -335,27 +323,6 @@
       </div>
     </section>
 
-
-    <section class="section office-gallery" id="espaco">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">Um espaço de acolhimento</span>
-          <h2>Conheça o ambiente de atendimento.</h2>
-          <p>Um espaço preparado para receber cada história com cuidado, escuta e respeito.</p>
-        </div>
-        <div class="office-grid">
-          <article class="office-card">
-            <img src="consultorio-livros.jpg" alt="Livros e materiais disponíveis no consultório de Gardênia">
-            <p>Livros e recursos que apoiam o trabalho e a reflexão.</p>
-          </article>
-          <article class="office-card">
-            <img src="consultorio-ambiente.jpg" alt="Estante com jogos, livros e materiais lúdicos do consultório">
-            <p>Materiais lúdicos e recursos para diferentes momentos do desenvolvimento.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="section" id="palestras">
       <div class="container talks-grid">
         <div class="talk-copy">
@@ -384,8 +351,8 @@
             <div class="timeline">
               <div class="timeline-item"><strong>Bacharelado em Psicologia</strong><p>Universidade Tiradentes · 2019</p></div>
               <div class="timeline-item"><strong>Pós-graduação em Psicologia Infantil</strong><p>Grupo Educacional FAVENI · 2021</p></div>
-              <div class="timeline-item"><strong>Pós-graduação em Psicologia Escolar e da Educação</strong><p>Faculdade FACEMINAS · 2026</p></div>
-              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional e do Trabalho</strong><p>Faculdade FACEMINAS · 2025</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Escolar e da Educação</strong><p>Faculdade FACEMINAS · 2026 · concluída</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional e do Trabalho</strong><p>Faculdade FACEMINAS · 2025 · concluída</p></div>
               <div class="timeline-item"><strong>Formação complementar em ABA</strong><p>Formações de terapeuta ABA · 2023 e 2024</p></div>
             </div>
           </div>
