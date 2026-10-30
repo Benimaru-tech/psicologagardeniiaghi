@@ -84,26 +84,44 @@
        Ex.: url("assets/foto-gardenia.jpg")
        ========================================================= */
     .photo {
-      background-color: #e7e9df;
-      background-image: linear-gradient(135deg, rgba(49,91,67,.08), rgba(232,174,184,.20));
-      background-position: center;
-      background-size: cover;
-      position: relative;
-      overflow: hidden;
-    }
-    .photo::after {
-      content: "ADICIONE SUA FOTO AQUI";
-      position: absolute; inset: auto 12px 12px;
-      text-align: center; color: rgba(49,91,67,.65);
-      font-size: .68rem; font-weight: 700; letter-spacing: .12em;
-    }
-    /* Troque as linhas abaixo por:
-       background-image: url("assets/foto-perfil.jpg");
-       e remova o ::after correspondente se desejar. */
-    .hero-photo { background-image: linear-gradient(145deg, rgba(49,91,67,.05), rgba(232,174,184,.22)); }
-    .child-photo { background-image: linear-gradient(145deg, rgba(241,213,139,.22), rgba(232,174,184,.25)); }
-    .work-photo { background-image: linear-gradient(145deg, rgba(169,203,214,.3), rgba(49,91,67,.12)); }
-    .talk-photo { background-image: linear-gradient(145deg, rgba(241,213,139,.24), rgba(169,203,214,.25)); }
+  background-color: #e7e9df;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Foto principal */
+.hero-photo {
+  background-image: url("assets/psigardenia.jpg");
+}
+
+/* Foto da seção Sobre */
+.about-photo {
+  background-image: url("assets/psisobre.jpg");
+}
+
+/* Psicologia Infantojuvenil */
+.child-photo {
+  background-image: url("assets/psiinfantil.jpg");
+}
+
+/* Psicologia Organizacional */
+.work-photo {
+  background-image: url("assets/psicongresso.jpg");
+}
+
+/* Palestras */
+.talk-photo {
+  background-image: url("assets/psiorganizacional.jpg");
+}
+
+/* Remove o texto de espaço reservado */
+.photo::after {
+  content: none;
+}
+
 
     /* =========================================================
        3. CABEÇALHO E NAVEGAÇÃO
@@ -311,6 +329,7 @@
   </style>
 </head>
 <body>
+
   <!-- CABEÇALHO -->
   <header class="site-header">
     <div class="container nav">
