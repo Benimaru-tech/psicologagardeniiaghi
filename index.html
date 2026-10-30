@@ -47,8 +47,8 @@
 
     /* Imagens */
     .photo { background-color: #e7e9df; background-position: center; background-size: cover; background-repeat: no-repeat; position: relative; overflow: hidden; }
-    .hero-photo { background-image: url("psigardenia.jpg"); }
-    .about-photo { background-image: url("psisobre.jpg"); }
+    .hero-photo { background-image: url("gardenia-retrato-1.jpg"); }
+    .about-photo { background-image: url("gardenia-retrato-2.jpg"); }
     .child-photo { background-image: url("psiinfantil.jpg"); }
     .work-photo { background-image: url("psicongresso.jpg"); }
     .child-photo, .work-photo { background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #e7e9df; }
@@ -120,7 +120,18 @@
     .area-list { list-style: none; padding: 0; margin: 20px 0 24px; display: grid; gap: 9px; color: #526057; font-size: .92rem; }
     .area-list li::before { content: "✳"; color: #bd7888; margin-right: 10px; }
 
-    /* Palestras */
+
+    /* Galeria do espaço de atendimento */
+    .office-gallery { background: #f1f4ed; }
+    .office-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .office-card { overflow: hidden; border-radius: var(--radius); background: white; box-shadow: 0 8px 28px rgba(38,53,44,.06); }
+    .office-card img { width: 100%; height: 360px; object-fit: cover; }
+    .office-card p { padding: 17px 20px; color: var(--muted); font-size: .92rem; }
+    @media (max-width: 700px) {
+      .office-grid { grid-template-columns: 1fr; }
+      .office-card img { height: 300px; }
+    }
+\n    /* Palestras */
     .talks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
     .talk-photo { min-height: 420px; border-radius: 28px; }
     .talk-copy h2 { color: var(--green); margin: 12px 0 18px; }
@@ -225,7 +236,7 @@
       </a>
       <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false" id="menuToggle">☰</button>
       <nav class="nav-links" id="navLinks">
-        <a href="#sobre">Sobre mim</a><a href="#atuacao">Atuação</a><a href="#palestras">Palestras</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
+        <a href="#sobre">Sobre mim</a><a href="#atuacao">Atuação</a><a href="#espaco">Consultório</a><a href="#palestras">Palestras</a><a href="#formacao">Formação</a><a href="#contato">Contato</a>
       </nav>
       <a class="btn btn-primary nav-cta" href="https://wa.me/5579999467873" target="_blank" rel="noopener">Fale comigo ↗</a>
     </div>
@@ -262,16 +273,21 @@
       <div class="container about-grid">
         <div class="about-visual"><div class="photo about-photo"></div><div class="about-blob"></div></div>
         <div class="about-copy">
-          <span class="eyebrow">Prazer, sou Gardênia</span>
-          <h2>Psicologia feita de presença, escuta e respeito.</h2>
-          <p>Sou psicóloga, formada pela Universidade Tiradentes, com trajetória profissional em diferentes contextos de cuidado e promoção da saúde mental.</p>
-          <p>Minha experiência inclui a atuação com crianças, famílias e comunidades, além de projetos voltados à saúde mental no ambiente organizacional. Acredito na importância de compreender cada pessoa em sua história, relações e contexto.</p>
-          <p>Meu compromisso é oferecer uma atuação ética, humanizada e atenta às necessidades de cada público.</p>
+          <span class="eyebrow">Prazer, sou Gardênia Iaghi</span>
+          <h2>Uma psicologia que acolhe histórias, compreende contextos e transforma realidades.</h2>
+          <p>Sou psicóloga, formada pela Universidade Tiradentes, com sete anos de trajetória profissional e atuação em diferentes campos da Psicologia. Minha caminhada é marcada pelo compromisso com uma prática ética, humanizada e fundamentada no conhecimento científico, reconhecendo a singularidade de cada pessoa e a complexidade de suas experiências.</p>
+          <p>Sou pós-graduada em Psicologia Organizacional e do Trabalho, Psicologia Infantil e Psicologia Escolar e da Educação, com formação em Análise do Comportamento Aplicada (ABA). Também ampliei minha trajetória acadêmica na Universidade Federal da Bahia (UFBA), onde cursei uma disciplina de Neuropsicologia como aluna especial.</p>
+          <p>Minha experiência profissional reúne atuação clínica com crianças e adolescentes, acompanhamento de famílias, trabalho em contextos sociais e comunitários e desenvolvimento de projetos de promoção da saúde mental no ambiente organizacional.</p>
+          <p>Ao longo dessa trajetória, aprendi que não existem pessoas desconectadas de suas histórias. Por isso, acredito em uma Psicologia que vai além dos sintomas: que considera os vínculos, as relações, o ambiente, as condições de vida e os aspectos emocionais que atravessam cada indivíduo.</p>
+          <p>Também atuo como palestrante, levando reflexões sobre saúde mental, desenvolvimento humano, relações de trabalho, autocuidado e valorização da vida para diferentes espaços e instituições.</p>
+          <p>Meu propósito é fazer uma Psicologia comprometida com pessoas, não apenas com demandas. Uma atuação que une conhecimento técnico, sensibilidade, responsabilidade e respeito às singularidades de cada história.</p>
           <div class="credentials">
-            <div class="credential"><strong>Psicologia</strong><small>Universidade Tiradentes · 2019</small></div>
-            <div class="credential"><strong>Psicologia Infantil</strong><small>Pós-graduação · 2021</small></div>
-            <div class="credential"><strong>Terapeuta ABA</strong><small>Formações complementares</small></div>
-            <div class="credential"><strong>Psicologia Organizacional</strong><small>Pós-graduação em andamento*</small></div>
+            <div class="credential"><strong>Psicologia</strong><small>Universidade Tiradentes</small></div>
+            <div class="credential"><strong>Psicologia Escolar e da Educação</strong><small>Pós-graduação · FACEMINAS · 2025</small></div>
+            <div class="credential"><strong>Psicologia Infantil</strong><small>Pós-graduação</small></div>
+            <div class="credential"><strong>Psicologia Organizacional e do Trabalho</strong><small>Pós-graduação</small></div>
+            <div class="credential"><strong>Análise do Comportamento Aplicada</strong><small>Formação em ABA</small></div>
+            <div class="credential"><strong>Neuropsicologia</strong><small>Disciplina cursada como aluna especial · UFBA</small></div>
           </div>
           <a class="text-link" href="#formacao">Conheça minha trajetória <span>→</span></a>
         </div>
@@ -310,6 +326,27 @@
       </div>
     </section>
 
+
+    <section class="section office-gallery" id="espaco">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Um espaço de acolhimento</span>
+          <h2>Conheça o ambiente de atendimento.</h2>
+          <p>Um espaço preparado para receber cada história com cuidado, escuta e respeito.</p>
+        </div>
+        <div class="office-grid">
+          <article class="office-card">
+            <img src="consultorio-livros.jpg" alt="Livros e materiais disponíveis no consultório de Gardênia">
+            <p>Livros e recursos que apoiam o trabalho e a reflexão.</p>
+          </article>
+          <article class="office-card">
+            <img src="consultorio-ambiente.jpg" alt="Estante com jogos, livros e materiais lúdicos do consultório">
+            <p>Materiais lúdicos e recursos para diferentes momentos do desenvolvimento.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <section class="section" id="palestras">
       <div class="container talks-grid">
         <div class="talk-copy">
@@ -338,7 +375,8 @@
             <div class="timeline">
               <div class="timeline-item"><strong>Bacharelado em Psicologia</strong><p>Universidade Tiradentes · 2019</p></div>
               <div class="timeline-item"><strong>Pós-graduação em Psicologia Infantil</strong><p>Grupo Educacional FAVENI · 2021</p></div>
-              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional</strong><p>Em andamento · Faculdade FACEMINAS</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Escolar e da Educação</strong><p>Faculdade FACEMINAS · 2025 · concluída</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional e do Trabalho</strong><p>Concluída</p></div>
               <div class="timeline-item"><strong>Formação complementar em ABA</strong><p>Formações de terapeuta ABA · 2023 e 2024</p></div>
             </div>
           </div>
