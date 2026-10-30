@@ -95,14 +95,69 @@
     .focus-inner b { color: var(--yellow); font-size: 1.2rem; }
 
     /* Sobre */
-    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 75px; align-items: center; }
-    .about-visual { display: grid; grid-template-columns: 1fr; gap: 22px; align-content: start; }
-    .about-photo, .about-photo-secondary {
-      display: block; width: 100%; aspect-ratio: 4 / 5; max-height: 430px;
-      object-fit: cover; object-position: center; border-radius: 26px;
-      box-shadow: var(--shadow); background: #e7e9df;
+    .about-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(36px, 5vw, 68px);
+      align-items: center;
     }
-    .about-photo-secondary { object-position: center 35%; }
+    .about-visual {
+      position: relative;
+      isolation: isolate;
+      display: grid;
+      grid-template-columns: 1fr;
+      justify-items: center;
+      align-content: center;
+      gap: 26px;
+      width: 100%;
+      max-width: 420px;
+      margin-inline: auto;
+      padding: 28px 16px;
+    }
+    .about-visual::before {
+      content: "✿";
+      position: absolute;
+      top: -2px;
+      left: -7px;
+      color: #bd7888;
+      font-size: 3.4rem;
+      line-height: 1;
+      transform: rotate(-18deg);
+      z-index: 2;
+      pointer-events: none;
+    }
+    .about-visual::after {
+      content: "";
+      position: absolute;
+      width: 118px;
+      height: 118px;
+      right: -3px;
+      bottom: 54px;
+      border-radius: 50%;
+      background: var(--blue);
+      opacity: .9;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .about-photo, .about-photo-secondary {
+      position: relative;
+      z-index: 1;
+      display: block;
+      width: min(100%, 340px);
+      aspect-ratio: 4 / 5;
+      height: auto;
+      object-fit: cover;
+      object-position: center center;
+      background: #e7e9df;
+      border: 7px solid var(--white);
+      box-shadow: var(--shadow);
+    }
+    .about-photo {
+      border-radius: 32px 88px 32px 32px;
+    }
+    .about-photo-secondary {
+      border-radius: 88px 30px 30px 30px;
+    }
     .about-blob { display: none; }
     .about-copy h2 { color: var(--green); margin: 12px 0 20px; }
     .about-copy p { color: var(--muted); margin-bottom: 15px; }
@@ -203,7 +258,7 @@
       .hero-flower { font-size: 3rem; }
       .focus-inner { justify-content: flex-start; gap: 14px 25px; }
       .focus-inner span { font-size: .82rem; }
-      .about-visual { min-height: 0; order: 2; }
+      .about-visual { min-height: 0; order: 2; max-width: 420px; margin: 28px auto 0; padding: 26px 16px; }
       .about-copy { order: 1; }
       .area-image { height: 205px; }
       .area-content { padding: 24px; }
@@ -351,8 +406,8 @@
             <div class="timeline">
               <div class="timeline-item"><strong>Bacharelado em Psicologia</strong><p>Universidade Tiradentes · 2019</p></div>
               <div class="timeline-item"><strong>Pós-graduação em Psicologia Infantil</strong><p>Grupo Educacional FAVENI · 2021</p></div>
-              <div class="timeline-item"><strong>Pós-graduação em Psicologia Escolar e da Educação</strong><p>Faculdade FACEMINAS · 2026</p></div>
-              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional e do Trabalho</strong><p>Faculdade FACEMINAS · 2025</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Escolar e da Educação</strong><p>Faculdade FACEMINAS · 2026 · concluída</p></div>
+              <div class="timeline-item"><strong>Pós-graduação em Psicologia Organizacional e do Trabalho</strong><p>Faculdade FACEMINAS · 2025 · concluída</p></div>
               <div class="timeline-item"><strong>Formação complementar em ABA</strong><p>Formações de terapeuta ABA · 2023 e 2024</p></div>
             </div>
           </div>
